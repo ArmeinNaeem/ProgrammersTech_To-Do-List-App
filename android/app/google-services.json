@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1077109706182",
+    "project_id": "mcproject-680fd",
+    "storage_bucket": "mcproject-680fd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1077109706182:android:c7bc601b52787ec58c36c7",
+        "android_client_info": {
+          "package_name": "com.example.mcproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHAZ2yGbKeLEHV52JO3_IghC-LuQoIR7k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
