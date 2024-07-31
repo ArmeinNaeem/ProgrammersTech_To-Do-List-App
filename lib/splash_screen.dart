@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'LoginScreen.dart';
+import 'login_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -10,47 +10,44 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    _navigateToLogin();
-  }
-
-  _navigateToLogin() async {
-    await Future.delayed(Duration(seconds: 3), () {});
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginScreen()));
+    Future.delayed(Duration(seconds: 5), () {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => LoginScreen()),
+      );
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
+        fit: StackFit.expand,
         children: [
-          // Background Image
-          Positioned.fill(
-            child: Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: NetworkImage('https://t3.ftcdn.net/jpg/03/24/73/92/360_F_324739203_keeq8udvv0P2h1MLYJ0GLSlTBagoXS48.jpg'), // Replace with your image URL
-                  fit: BoxFit.cover,
-                ),
+          Container(
+            color: Colors.pink[800], // Dark pink background
+          ),
+          Center(
+            child: Text(
+              'Food Panda',
+              style: TextStyle(
+                fontSize: 36, // Increased font size for better visibility
+                fontWeight: FontWeight.bold,
+                color: Colors.white, // White text color
               ),
             ),
           ),
-          // Content
-          Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [Colors.blue, Colors.greenAccent],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
+          Positioned(
+            bottom: 0,
+            right: 0,
+            child: Container(
+              constraints: BoxConstraints(
+                maxHeight: MediaQuery.of(context).size.height * 0.5,
+                maxWidth: MediaQuery.of(context).size.width * 0.5,
               ),
-            ),
-            child: Center(
-              child: Text(
-                'TO-DO APP',
-                style: TextStyle(
-                  fontSize: 40,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
+              child: Image.network(
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYNbDroF40bIn8kskE5NiPbHOTFzHCbCEEdQ&s', // Replace with your image URL
+                fit: BoxFit.cover,
               ),
             ),
           ),
